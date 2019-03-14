@@ -42,27 +42,20 @@ public class OfferItem {
             discountValue = discountValue.add(discount.getAmount().getValue());
         }
 
-        this.totalCost = product.getPrice().multiply((new BigDecimal(quantity))).subtract(discountValue);
+        this.totalCost = new Money(product.getPrice().getValue().multiply((new BigDecimal(quantity))).subtract(discountValue), totalCost.getCurrency());
 
     }
 
 
 
-    public BigDecimal getTotalCost() {
+    public Money getTotalCost() {
         return totalCost;
     }
 
-    public String getTotalCostCurrency() {
-        return currency;
-    }
-
-    public BigDecimal getDiscount() {
+    public Discount getDiscount() {
         return discount;
     }
 
-    public String getDiscountCause() {
-        return discountCause;
-    }
 
     public int getQuantity() {
         return quantity;
