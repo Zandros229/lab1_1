@@ -79,9 +79,9 @@ public class OfferItem {
     }
 
     /**
-     * @param other
+     * @param other other OfferItem
      * @param delta acceptable percentage difference
-     * @return
+     * @return True if product offer are the same or False if product offer are different( price difference are to high)
      */
 
     public boolean sameAs(OfferItem other, double delta) {

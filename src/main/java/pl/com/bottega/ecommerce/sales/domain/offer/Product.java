@@ -5,6 +5,7 @@ import java.util.Date;
 import java.util.Objects;
 
 public class Product {
+
     private String productId;
 
     private BigDecimal productPrice;
@@ -17,13 +18,14 @@ public class Product {
 
     private Money price;
 
-    public Product(String productId, BigDecimal productPrice, String productName, Date productSnapshotDate, String productType, Money price) {
+    public Product(String productId, BigDecimal productPrice, String productName, Date productSnapshotDate, String productType,
+            Money price) {
         this.productId = productId;
         this.productPrice = productPrice;
         this.productName = productName;
         this.productSnapshotDate = productSnapshotDate;
         this.productType = productType;
-        this.price=price;
+        this.price = price;
     }
 
     public String getProductId() {
@@ -64,6 +66,7 @@ public class Product {
                && Objects.equals(getProductType(), product.getProductType())
                && Objects.equals(getPrice(), product.getPrice());
     }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) {
