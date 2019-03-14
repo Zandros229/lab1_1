@@ -26,26 +26,24 @@ public class OfferItem {
     private Money totalCost;
 
     // discount
+    private Discount discount;
 
 
-    /*public OfferItem(Product product, int quantity) {
-        this(product, quantity);
-    }*/
 
-    public OfferItem(Product product, BigDecimal productPrice, int quantity, BigDecimal discount, String discountCause) {
+    public OfferItem(Product product, int quantity,Money totalCost, Discount discount) {
 
         this.product= product;
         this.quantity = quantity;
         this.discount = discount;
-        this.discountCause = discountCause;
+
 
         BigDecimal discountValue = new BigDecimal(0);
         if (discount != null) {
-            discountValue = discountValue.add(discount);
+            discountValue = discountValue.add(discount.getAmount().getValue());
         }
 
-        this.totalCost = productPrice.multiply(new BigDecimal(quantity))
-                                     .subtract(discountValue);
+        this.totalCost = product.getPrice().multiply((new BigDecimal(quantity))).subtract(discountValue);
+
     }
 
 

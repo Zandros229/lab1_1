@@ -24,4 +24,28 @@ public class Product {
         this.productType = productType;
         this.price=price;
     }
+
+    public String getProductId() {
+        return productId;
+    }
+
+    public BigDecimal getProductPrice() {
+        return productPrice;
+    }
+
+    public String getProductName() {
+        return productName;
+    }
+
+    public Date getProductSnapshotDate() {
+        return productSnapshotDate;
+    }
+
+    public String getProductType() {
+        return productType;
+    }
+
+    public Money getPrice() {
+        return price;
+    }
 }

@@ -11,4 +11,15 @@ public class Money {
         this.value = value;
         this.currency = currency;
     }
+
+    public BigDecimal getValue() {
+        return value;
+    }
+
+    public String getCurrency() {
+        return currency;
+    }
+    public BigDecimal multiply(BigDecimal multiplier){
+        return value.multiply(multiplier);
+    }
 }
