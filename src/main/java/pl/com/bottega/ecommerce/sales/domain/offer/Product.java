@@ -50,6 +50,20 @@ public class Product {
         return price;
     }
 
+    public boolean sameAs(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof Product)) {
+            return false;
+        }
+        Product product = (Product) o;
+        return Objects.equals(getProductId(), product.getProductId())
+               && Objects.equals(getProductPrice(), product.getProductPrice())
+               && Objects.equals(getProductName(), product.getProductName())
+               && Objects.equals(getProductType(), product.getProductType())
+               && Objects.equals(getPrice(), product.getPrice());
+    }
     @Override
     public boolean equals(Object o) {
         if (this == o) {

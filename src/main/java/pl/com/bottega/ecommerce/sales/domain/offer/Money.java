@@ -37,4 +37,8 @@ public class Money {
     public int hashCode() {
         return Objects.hash(getValue(), getCurrency());
     }
+
+    public int compareTo(Money totalCost) {
+        return value.compareTo(totalCost.value);
+    }
 }
