@@ -8,8 +8,6 @@ public class Product {
 
     private String productId;
 
-    private BigDecimal productPrice;
-
     private String productName;
 
     private Date productSnapshotDate;
@@ -18,10 +16,9 @@ public class Product {
 
     private Money price;
 
-    public Product(String productId, BigDecimal productPrice, String productName, Date productSnapshotDate, String productType,
+    public Product(String productId, String productName, Date productSnapshotDate, String productType,
             Money price) {
         this.productId = productId;
-        this.productPrice = productPrice;
         this.productName = productName;
         this.productSnapshotDate = productSnapshotDate;
         this.productType = productType;
@@ -31,11 +28,7 @@ public class Product {
     public String getProductId() {
         return productId;
     }
-
-    public BigDecimal getProductPrice() {
-        return productPrice;
-    }
-
+    
     public String getProductName() {
         return productName;
     }
@@ -61,7 +54,6 @@ public class Product {
         }
         Product product = (Product) o;
         return Objects.equals(getProductId(), product.getProductId())
-               && Objects.equals(getProductPrice(), product.getProductPrice())
                && Objects.equals(getProductName(), product.getProductName())
                && Objects.equals(getProductType(), product.getProductType())
                && Objects.equals(getPrice(), product.getPrice());
@@ -77,7 +69,6 @@ public class Product {
         }
         Product product = (Product) o;
         return Objects.equals(getProductId(), product.getProductId())
-               && Objects.equals(getProductPrice(), product.getProductPrice())
                && Objects.equals(getProductName(), product.getProductName())
                && Objects.equals(getProductSnapshotDate(), product.getProductSnapshotDate())
                && Objects.equals(getProductType(), product.getProductType())
@@ -86,6 +77,6 @@ public class Product {
 
     @Override
     public int hashCode() {
-        return Objects.hash(getProductId(), getProductPrice(), getProductName(), getProductSnapshotDate(), getProductType(), getPrice());
+        return Objects.hash(getProductId(), getProductName(), getProductSnapshotDate(), getProductType(), getPrice());
     }
 }
