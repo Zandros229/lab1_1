@@ -41,6 +41,7 @@ public class Offer {
         if (getClass() != obj.getClass()) {
             return false;
         }
+
         Offer other = (Offer) obj;
         if (availableItems == null) {
             if (other.availableItems != null) {
@@ -53,10 +54,8 @@ public class Offer {
     }
 
     /**
-     *
      * @param seenOffer
-     * @param delta
-     *            acceptable difference in percent
+     * @param delta     acceptable difference in percent
      * @return
      */
     public boolean sameAs(Offer seenOffer, double delta) {

@@ -19,15 +19,7 @@ import java.util.Objects;
 public class OfferItem {
 
     // product
-    private String productId;
-
-    private BigDecimal productPrice;
-
-    private String productName;
-
-    private Date productSnapshotDate;
-
-    private String productType;
+    private Product product;
 
     private int quantity;
 
@@ -40,19 +32,13 @@ public class OfferItem {
 
     private BigDecimal discount;
 
-    public OfferItem(String productId, BigDecimal productPrice, String productName, Date productSnapshotDate, String productType,
-            int quantity) {
-        this(productId, productPrice, productName, productSnapshotDate, productType, quantity, null, null);
-    }
+    /*public OfferItem(Product product, int quantity) {
+        this(product, quantity);
+    }*/
 
-    public OfferItem(String productId, BigDecimal productPrice, String productName, Date productSnapshotDate, String productType,
-            int quantity, BigDecimal discount, String discountCause) {
-        this.productId = productId;
-        this.productPrice = productPrice;
-        this.productName = productName;
-        this.productSnapshotDate = productSnapshotDate;
-        this.productType = productType;
+    public OfferItem(Product product, BigDecimal productPrice, int quantity, BigDecimal discount, String discountCause) {
 
+        this.product= product;
         this.quantity = quantity;
         this.discount = discount;
         this.discountCause = discountCause;
@@ -66,25 +52,7 @@ public class OfferItem {
                                      .subtract(discountValue);
     }
 
-    public String getProductId() {
-        return productId;
-    }
 
-    public BigDecimal getProductPrice() {
-        return productPrice;
-    }
-
-    public String getProductName() {
-        return productName;
-    }
-
-    public Date getProductSnapshotDate() {
-        return productSnapshotDate;
-    }
-
-    public String getProductType() {
-        return productType;
-    }
 
     public BigDecimal getTotalCost() {
         return totalCost;
@@ -143,6 +111,7 @@ public class OfferItem {
      *            acceptable percentage difference
      * @return
      */
+    //change param name name in java doc
     public boolean sameAs(OfferItem other, double delta) {
         if (productPrice == null) {
             if (other.productPrice != null) {
@@ -189,5 +158,7 @@ public class OfferItem {
 
         return acceptableDelta.compareTo(difference) > 0;
     }
+// divide it into 3 clases
+//change method sameAs
 
 }
