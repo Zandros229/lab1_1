@@ -14,11 +14,14 @@ public class Product {
 
     private String productType;
 
-    public Product(String productId, BigDecimal productPrice, String productName, Date productSnapshotDate, String productType) {
+    private Money price;
+
+    public Product(String productId, BigDecimal productPrice, String productName, Date productSnapshotDate, String productType, Money price) {
         this.productId = productId;
         this.productPrice = productPrice;
         this.productName = productName;
         this.productSnapshotDate = productSnapshotDate;
         this.productType = productType;
+        this.price=price;
     }
 }

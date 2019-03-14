@@ -23,14 +23,10 @@ public class OfferItem {
 
     private int quantity;
 
-    private BigDecimal totalCost;
-
-    private String currency;
+    private Money totalCost;
 
     // discount
-    private String discountCause;
 
-    private BigDecimal discount;
 
     /*public OfferItem(Product product, int quantity) {
         this(product, quantity);
